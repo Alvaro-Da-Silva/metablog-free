@@ -21,3 +21,49 @@
       font-size: 1rem;
    }
 }
+
+@layer components {
+   /* Card background styles for dark and light theme */
+   .card {
+      @apply transition-all duration-300 ease-in-out;
+   }
+
+   /* Light theme */
+   .light .card {
+      @apply bg-base-100 shadow-md;
+   }
+
+   .light .card:hover {
+      @apply shadow-lg;
+   }
+
+   /* Dark theme */
+   .dark .card {
+      @apply bg-base-200 shadow-lg;
+   }
+
+   .dark .card:hover {
+      @apply shadow-xl;
+   }
+
+   /* Default fallback */
+   @media (prefers-color-scheme: light) {
+      .card {
+         @apply bg-base-100 shadow-md;
+      }
+
+      .card:hover {
+         @apply shadow-lg;
+      }
+   }
+
+   @media (prefers-color-scheme: dark) {
+      .card {
+         @apply bg-base-200 shadow-lg;
+      }
+
+      .card:hover {
+         @apply shadow-xl;
+      }
+   }
+}

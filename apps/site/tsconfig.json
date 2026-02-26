@@ -29,6 +29,6 @@
       "**/*.tsx",
       ".next/types/**/*.ts",
       "pages/_app.js"
-   ],
-   "exclude": ["node_modules", "cypress/**/*.ts", "cypress.config.ts"]
+, "utils/store.tsx"   ],
+   "exclude": ["node_modules", "../../.trash/cypress/**/*.ts", "cypress.config.ts"]
 }

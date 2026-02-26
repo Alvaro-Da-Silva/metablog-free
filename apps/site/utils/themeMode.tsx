@@ -1,5 +1,6 @@
 'use client'
-import React, { useEffect, useState } from 'react'
+
+import React from 'react'
 import { ThemeProvider, useTheme } from 'next-themes'
 
 type Props = {
@@ -12,32 +13,6 @@ export function Providers({ children }: Props) {
          themes={[
             'light',
             'dark',
-            'bumblebee',
-            'emerald',
-            'corporate',
-            'synthwave',
-            'retro',
-            'cyberpunk',
-            'valentine',
-            'halloween',
-            'garden',
-            'forest',
-            'aqua',
-            'lofi',
-            'pastel',
-            'fantasy',
-            'wireframe',
-            'black',
-            'luxury',
-            'dracula',
-            'cmyk',
-            'autumn',
-            'business',
-            'acid',
-            'lemonade',
-            'night',
-            'coffee',
-            'winter',
          ]}
          enableSystem={false}
       >
@@ -49,10 +24,10 @@ export function Providers({ children }: Props) {
 const useMode = () => {
    const { themes, theme, setTheme, forcedTheme, systemTheme, resolvedTheme } =
       useTheme()
-   const [lightMode, setLightMode] = useState(true)
-   const [hydrationError, setHydrationError] = useState(false)
+   const [lightMode, setLightMode] = React.useState(true)
+   const [hydrationError, setHydrationError] = React.useState(false)
 
-   useEffect(() => {
+   React.useEffect(() => {
       if (theme === 'light') {
          setLightMode(true)
       } else if (theme === 'dark') {
@@ -61,7 +36,7 @@ const useMode = () => {
    }, [theme])
 
    // fix hydration error on next-themes
-   useEffect(() => {
+   React.useEffect(() => {
       setHydrationError(true)
    }, [])
 
